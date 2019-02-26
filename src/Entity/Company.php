@@ -49,12 +49,11 @@ class Company
         return $this->name;
     }
 
-
     public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
     }
-d
+    s
 }
