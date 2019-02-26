@@ -3,7 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
+/**
+ * @ApiResource()
+ * @ORM\Entity
+ */
 class Company
 {
     /**
@@ -27,7 +32,7 @@ class Company
         return $this->id;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
