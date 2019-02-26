@@ -38,5 +38,5 @@ class Company
 
         return $this;
     }
-    
+
 }
