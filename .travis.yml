@@ -46,7 +46,7 @@ services:
 install:
     - if [ "${BRANCH}" = "" ]; then BRANCH=develop; fi;
     - if [[ "$TRAVIS_BRANCH" = "master" && $TRAVIS_PULL_REQUEST_BRANCH = "" ]]; then BRANCH=develop; fi;
-    - cp .env.travis.dist .env
+    - cp .env.dist .env
     - composer global require "hirak/prestissimo:^0.3"
     - composer install --no-interaction --prefer-dist
 
