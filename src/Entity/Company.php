@@ -38,6 +38,5 @@ class Company
 
         return $this;
     }
-
-die; 
+    
 }
