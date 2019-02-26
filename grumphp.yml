@@ -1,0 +1,11 @@
+parameters:
+    git_dir: .
+    bin_dir: "vendor/bin"
+    tasks:
+        phpcs:
+            whitelist_patterns:
+                - /^src/
+        #phpcsfixer2: ~
+        phpstan:
+            ignore_patterns:
+                - /^tests/

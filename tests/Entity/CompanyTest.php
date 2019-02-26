@@ -12,6 +12,7 @@ class CompanyTest extends TestCase
         $company = new Company();
         $company->setName('company 1');
 
+        // assert that your calculator added the numbers correctly!
         $this->assertEquals('company 1', $company->getName());
     }
 }

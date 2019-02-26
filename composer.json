@@ -60,6 +60,10 @@
         }
     },
     "require-dev": {
+        "behat/behat": "^3.5",
+        "behat/symfony2-extension": "^2.1",
+        "codeception/codeception": "^2.5",
+        "hautelook/alice-bundle": "^2.3",
         "phpro/grumphp": "^0.15.0",
         "phpstan/phpstan": "^0.10.8",
         "squizlabs/php_codesniffer": "*",
