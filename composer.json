@@ -64,6 +64,7 @@
         "phpstan/phpstan": "^0.10.8",
         "squizlabs/php_codesniffer": "*",
         "symfony/maker-bundle": "^1.11",
+        "symfony/phpunit-bridge": "4.2.*",
         "symfony/web-server-bundle": "4.2.*"
     }
 }
