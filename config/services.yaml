@@ -26,3 +26,20 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # CONSUMER
+    algolia.client:
+        alias: algolia_client
+        public: true
+
+    App\EventSubscriber\UpdateAlgoliaSubscriber:
+        arguments:
+            $algoliaPublisher: '@old_sound_rabbit_mq.algolia_producer'
+
+    App\Amqp\Consumer\AlgoliaConsumer:
+        class: App\Consumer\AlgoliaConsumer
+        arguments:
+            $algoliaClient: '@algolia.client'
+
+    AlgoliaSearch\Client:
+        alias: algolia.client

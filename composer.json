@@ -11,6 +11,7 @@
         "easycorp/easyadmin-bundle": "^2.1",
         "friendsofphp/php-cs-fixer": "^2.14",
         "lexik/jwt-authentication-bundle": "^2.6",
+        "php-amqplib/rabbitmq-bundle": "^1.14",
         "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",

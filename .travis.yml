@@ -1,0 +1,67 @@
+filter_secrets: false
+
+language: php
+
+dist: xenial
+
+sudo: false
+
+php:
+    - 7.2
+
+cache:
+    directories:
+        - ~/.composer/cache/files
+
+env:
+    global:
+        - BRANCH="${TRAVIS_PULL_REQUEST_BRANCH/\//-}"
+        - BRANCH="${BRANCH,,}"
+        - BRANCH="${BRANCH/\//-}"
+        - DATABASE_TEST_URL='mysql://root:root@127.0.0.1:3306/conference'
+
+addons:
+    postgresql: "9.6"
+
+branches:
+  only:
+    - master
+    - develop
+    - /^release\/\d\.\d+\.\d+$/
+    - /^hotfix\/\d\.\d+\.\d+$/
+
+before_install:
+    - sudo apt-get install rabbitmq-server
+    - phpenv config-rm xdebug.ini || true
+
+    - pecl install memcached <<<'no --disable-memcached-sasl'
+
+    - sudo curl -L https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o /usr/local/bin/php-cs-fixer
+    - sudo chmod a+x /usr/local/bin/php-cs-fixer
+
+services:
+    - memcached
+    - rabbitmq
+
+install:
+    - if [ "${BRANCH}" = "" ]; then BRANCH=develop; fi;
+    - if [[ "$TRAVIS_BRANCH" = "master" && $TRAVIS_PULL_REQUEST_BRANCH = "" ]]; then BRANCH=develop; fi;
+    - cp .env.travis.dist .env
+    - composer global require "hirak/prestissimo:^0.3"
+    - composer install --no-interaction --prefer-dist
+
+before_script:
+    - bin/console doctrine:database:create --env=test -vvv
+    - bin/console cache:warmup --env=test --no-debug -vvv
+    - bin/console doctrine:schema:update --force --env=test
+    - bin/console assets:install --env=test --no-debug -vvv
+
+script:
+    - php-cs-fixer fix --diff --dry-run --verbose --ansi
+
+    - bin/phpunit --configuration phpunit.xml.travis.dist
+
+    - bin/phpspec run --no-interaction -f dot
+
+    - bin/behat --format=progress
+
