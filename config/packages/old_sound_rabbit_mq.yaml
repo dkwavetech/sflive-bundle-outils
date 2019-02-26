@@ -1,0 +1,15 @@
+old_sound_rabbit_mq:
+    connections:
+        default:
+            url: '%env(RABBITMQ_URL)%'
+    producers:
+        # use 'old_sound_rabbit_mq.algolia_producer' service to send data.
+        algolia:
+            connection:       default
+            exchange_options: { name: 'algolia', type: direct }
+    consumers:
+        algolia:
+            connection:       default
+            exchange_options: { name: 'algolia', type: direct }
+            queue_options:    { name: 'algolia'}
+            callback:         App\Consumer\AlgoliaConsumer
