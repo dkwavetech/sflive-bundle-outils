@@ -6,7 +6,19 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *    itemOperations={
+ *        "get"={"method"="GET"},
+ *        "put"={"method"="PUT"},
+ *        "delete"={"method"="DELETE"},
+ *        "get_infos"={
+ *            "route_name"="app_company_wiki"
+ *         },
+ *        "get_secured"={
+ *            "route_name"="app_company_secured"
+ *         }
+ *    }
+ * )
  * @ORM\Entity
  */
 class Company
@@ -27,7 +39,7 @@ class Company
      */
     private $name;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

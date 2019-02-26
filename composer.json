@@ -6,12 +6,17 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
+        "csa/guzzle-bundle": "^3.0",
+        "easycorp/easyadmin-bundle": "^2.1",
         "friendsofphp/php-cs-fixer": "^2.14",
+        "lexik/jwt-authentication-bundle": "^2.6",
+        "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.2.*",
         "symfony/orm-pack": "^1.0",
+        "symfony/twig-bundle": "4.2.*",
         "symfony/yaml": "4.2.*"
     },
     "config": {
@@ -69,6 +74,7 @@
         "squizlabs/php_codesniffer": "*",
         "symfony/maker-bundle": "^1.11",
         "symfony/phpunit-bridge": "4.2.*",
+        "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "4.2.*"
     }
 }

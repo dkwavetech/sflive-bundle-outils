@@ -92,6 +92,27 @@
     "container-interop/container-interop": {
         "version": "1.2.0"
     },
+    "csa/guzzle-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "36a5a2e81228674d88ebc1d9774445210a0d0d06"
+        },
+        "files": [
+            "config/packages/csa_guzzle.yaml"
+        ]
+    },
+    "csa/guzzle-cache-middleware": {
+        "version": "v1.0.0"
+    },
+    "csa/guzzle-history-middleware": {
+        "version": "v1.0.0"
+    },
+    "csa/guzzle-stopwatch-middleware": {
+        "version": "v1.0.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -174,6 +195,19 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "0a51040a43c6f2172a3a0135cd15daf2043905d7"
+        },
+        "files": [
+            "config/packages/easy_admin.yaml",
+            "config/routes/easy_admin.yaml"
+        ]
+    },
     "facebook/webdriver": {
         "version": "1.6.0"
     },
@@ -227,11 +261,29 @@
     "justinrainbow/json-schema": {
         "version": "5.2.8"
     },
+    "lcobucci/jwt": {
+        "version": "3.2.5"
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "509b1542f3180a1cfe248ade8b7bf5092c2d4127"
+        },
+        "files": [
+            "config/packages/lexik_jwt_authentication.yaml"
+        ]
+    },
     "monolog/monolog": {
         "version": "1.24.0"
     },
     "myclabs/deep-copy": {
         "version": "1.8.1"
+    },
+    "namshi/jose": {
+        "version": "7.2.3"
     },
     "nelmio/alice": {
         "version": "3.2",
@@ -287,6 +339,9 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.2"
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v2.0.1"
     },
     "phar-io/manifest": {
         "version": "1.0.3"
@@ -490,6 +545,9 @@
             ".env"
         ]
     },
+    "symfony/form": {
+        "version": "v4.2.3"
+    },
     "symfony/framework-bundle": {
         "version": "4.2",
         "recipe": {
@@ -516,6 +574,9 @@
         "version": "v4.2.3"
     },
     "symfony/inflector": {
+        "version": "v4.2.3"
+    },
+    "symfony/intl": {
         "version": "v4.2.3"
     },
     "symfony/maker-bundle": {
@@ -549,6 +610,9 @@
             "tests/.gitignore"
         ]
     },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.10.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
@@ -557,6 +621,9 @@
     },
     "symfony/process": {
         "version": "v4.2.3"
+    },
+    "symfony/profiler-pack": {
+        "version": "v1.0.4"
     },
     "symfony/property-access": {
         "version": "v4.2.3"
@@ -651,8 +718,25 @@
             "config/packages/validator.yaml"
         ]
     },
+    "symfony/var-dumper": {
+        "version": "v4.2.3"
+    },
     "symfony/var-exporter": {
         "version": "v4.2.3"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        },
+        "files": [
+            "config/packages/dev/web_profiler.yaml",
+            "config/packages/test/web_profiler.yaml",
+            "config/routes/dev/web_profiler.yaml"
+        ]
     },
     "symfony/web-server-bundle": {
         "version": "3.3",
@@ -677,6 +761,18 @@
     },
     "theseer/tokenizer": {
         "version": "1.1.0"
+    },
+    "twig/extensions": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "ddb2e0a77773b7fd75d8d649545f174e664500ab"
+        },
+        "files": [
+            "config/packages/twig_extensions.yaml"
+        ]
     },
     "twig/twig": {
         "version": "v2.6.2"

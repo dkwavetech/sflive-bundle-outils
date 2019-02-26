@@ -9,3 +9,4 @@ parameters:
         phpstan:
             ignore_patterns:
                 - /^tests/
+                - /^features/
