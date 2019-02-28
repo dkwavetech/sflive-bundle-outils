@@ -6,7 +6,7 @@ namespace App\Consumer;
 
 use Algolia\SearchBundle\IndexManagerInterface;
 use AlgoliaSearch\Client;
-use App\Entity\Company;
+use App\Entity\Speaker;
 use Doctrine\ORM\EntityManagerInterface;
 use OldSound\RabbitMqBundle\RabbitMq\ConsumerInterface;
 use PhpAmqpLib\Message\AMQPMessage;
@@ -37,9 +37,9 @@ class AlgoliaConsumer implements ConsumerInterface
         $message = \json_decode($msg->getBody(), true);
 
         try {
-            $repository = $this->entityManager->getRepository(Company::class);
+            $repository = $this->entityManager->getRepository(Speaker::class);
 
-            /** @var Company $entity */
+            /** @var Speaker $entity */
             $entity = $repository->find($message['id']);
 
             $this->entityManager->refresh($entity);

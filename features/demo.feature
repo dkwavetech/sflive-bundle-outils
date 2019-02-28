@@ -11,6 +11,6 @@ Feature:
     When a demo scenario sends a request to "/"
     Then the response should be received
 
-  Scenario: It receives a response from company API
-    When a demo scenario sends a request to "/api/companies"
+  Scenario: It receives a response from speaker API
+    When a demo scenario sends a request to "/api/speakers"
     Then the response should be successful

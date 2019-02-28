@@ -1,0 +1,5 @@
+App\Entity\Speaker:
+    dummy_{1..9}:
+        name: <name()>
+    Speaker_CODECETION:
+        name: codeception

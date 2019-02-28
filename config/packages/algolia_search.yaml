@@ -3,5 +3,5 @@
 algolia_search:
     prefix: '%env(APP_ENV)%_'
     indices:
-        - name: companies
-          class: App\Entity\Company
+        - name: speakers
+          class: App\Entity\Speaker

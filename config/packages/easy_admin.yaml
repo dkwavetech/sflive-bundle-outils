@@ -8,4 +8,4 @@
 easy_admin:
     entities:
         # change the following to the namespaces of your own entities
-        - App\Entity\Company
+        - App\Entity\Speaker

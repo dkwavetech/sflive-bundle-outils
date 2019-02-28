@@ -1,3 +1,0 @@
-App\Entity\Company:
-    dummy_{1..10}:
-        name: <name()>

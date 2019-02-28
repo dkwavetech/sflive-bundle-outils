@@ -12,16 +12,16 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *        "put"={"method"="PUT"},
  *        "delete"={"method"="DELETE"},
  *        "get_infos"={
- *            "route_name"="app_company_wiki"
+ *            "route_name"="app_speaker_wiki"
  *         },
  *        "get_secured"={
- *            "route_name"="app_company_secured"
+ *            "route_name"="app_speaker_secured"
  *         }
  *    }
  * )
  * @ORM\Entity
  */
-class Company
+class Speaker
 {
     /**
      * @var integer
@@ -55,5 +55,4 @@ class Company
 
         return $this;
     }
-    s
 }

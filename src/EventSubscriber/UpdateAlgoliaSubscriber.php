@@ -7,7 +7,7 @@ namespace App\EventSubscriber;
 use ApiPlatform\Core\EventListener\EventPriorities;
 use App\Amqp\Message\AlgoliaMessage;
 use App\Amqp\Publisher\AlgoliaMessagePublisher;
-use App\Entity\Company;
+use App\Entity\Speaker;
 use App\Entity\Firm;
 use OldSound\RabbitMqBundle\RabbitMq\ProducerInterface;
 use Psr\Log\LoggerInterface;
@@ -38,12 +38,12 @@ class UpdateAlgoliaSubscriber implements EventSubscriberInterface
 
     public function updateAlgolia(GetResponseForControllerResultEvent $event)
     {
-        $company = $event->getControllerResult();
+        $speaker = $event->getControllerResult();
 
-        if ($company instanceof Company) {
-            $this->algoliaPublisher->publish(json_encode(['id' => $company->getId()]));
+        if ($speaker instanceof Speaker) {
+            $this->algoliaPublisher->publish(json_encode(['id' => $speaker->getId()]));
 
-            $this->logger->info("publish algolia message for company id {$company->getId()}");
+            $this->logger->info("publish algolia message for speaker id {$speaker->getId()}");
         }
     }
 }
