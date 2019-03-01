@@ -10,3 +10,5 @@ parameters:
             ignore_patterns:
                 - /^tests/
                 - /^features/
+        phpmd:
+            exclude: ['test', 'features']
