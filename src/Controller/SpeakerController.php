@@ -51,7 +51,7 @@ class SpeakerController
         $test2 = 2;
         //d
         if ($test1 === '2') {
-            return 12;
+            return 'ok';
         }
     }
 
