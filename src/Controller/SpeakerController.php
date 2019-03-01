@@ -44,4 +44,23 @@ class SpeakerController
     {
         return new Response();
     }
+
+    /*
+     * Détection des erreurs
+     * 
+    public function excessiveMethodLength():string
+    {
+        $test1 = 1;
+        $test2 = 2;
+        //d
+        if ($test1 === '2') {
+            return 12;
+        }
+    }
+
+    private function unused()
+    {
+        return true;
+    }
+    */
 }

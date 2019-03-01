@@ -46,9 +46,7 @@ class Speaker
 
     public function getName(): ?string
     {
-        //return $this->name;
-
-        return 12;
+        return $this->name;
     }
 
     public function setName(string $name): self
@@ -57,5 +55,4 @@ class Speaker
 
         return $this;
     }
-    d
 }

@@ -12,3 +12,4 @@ parameters:
                 - /^features/
         phpmd:
             exclude: ['test', 'features']
+            ruleset: ['phpmd.xml']
