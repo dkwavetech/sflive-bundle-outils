@@ -358,6 +358,9 @@
     "pagerfanta/pagerfanta": {
         "version": "v2.0.1"
     },
+    "pdepend/pdepend": {
+        "version": "2.5.2"
+    },
     "phar-io/manifest": {
         "version": "1.0.3"
     },
@@ -391,6 +394,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpmd/phpmd": {
+        "version": "2.6.0"
     },
     "phpro/grumphp": {
         "version": "v0.15.0"

@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CompanyController
+class SpeakerController
 {
 
     private $client;
@@ -21,7 +21,7 @@ class CompanyController
 
     /**
      * @Route(
-     *     name="app_company_wiki",
+     *     name="app_speaker_wiki",
      *     path="/api/wiki",
      *     methods={"GET"}
      * )
@@ -35,7 +35,7 @@ class CompanyController
 
     /**
      * @Route(
-     *     name="app_company_secured",
+     *     name="app_speaker_secured",
      *     path="/api/secured",
      *     methods={"GET"}
      * )

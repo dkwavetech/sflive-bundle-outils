@@ -27,6 +27,7 @@ class FeatureContext implements Context
     {
         $this->kernel = $kernel;
     }
+    
 
     /**
      * @When a demo scenario sends a request to :path
