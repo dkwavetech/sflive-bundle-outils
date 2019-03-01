@@ -26,7 +26,7 @@ class SpeakerController
      *     methods={"GET"}
      * )
      */
-    public function getWikiInfos(Request $request): Response
+    public function getWikiInfos(): Response
     {
         $response = $this->client->get('https://fr.wikipedia.org/w/api.php?action=opensearch&search=php');
 
@@ -45,9 +45,6 @@ class SpeakerController
         return new Response();
     }
 
-    /*
-     * Détection des erreurs
-     * 
     public function excessiveMethodLength():string
     {
         $test1 = 1;
@@ -62,5 +59,4 @@ class SpeakerController
     {
         return true;
     }
-    */
 }
