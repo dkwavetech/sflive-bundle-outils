@@ -45,7 +45,7 @@ class SpeakerController
         return new Response();
     }
 
-    public function excessiveMethodLength():string
+    /*public function excessiveMethodLength():string
     {
         $test1 = 1;
         $test2 = 2;
@@ -58,5 +58,5 @@ class SpeakerController
     private function unused()
     {
         return true;
-    }
+    }*/
 }
