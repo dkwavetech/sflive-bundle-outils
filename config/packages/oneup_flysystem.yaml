@@ -1,0 +1,17 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle/tree/master/Resources/doc/index.md
+oneup_flysystem:
+    adapters:
+        default_adapter:
+            local:
+                directory: '%kernel.cache_dir%/flysystem'
+
+        speaker_ftp:
+            ftp:
+              host: '%env(FTP_HOST)%'
+              port: '%env(FTP_PORT)%'
+              username: '%env(FTP_USERNAME)%'
+              password: '%env(FTP_PASSWORD)%'
+    filesystems:
+        default_filesystem:
+            adapter: speaker_ftp
+            alias: League\Flysystem\Filesystem

@@ -27,7 +27,6 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    # CONSUMER
     algolia.client:
         alias: algolia_client
         public: true
@@ -43,3 +42,7 @@ services:
 
     AlgoliaSearch\Client:
         alias: algolia.client
+
+    App\Controller\SpeakerController:
+        arguments:
+            $filesystem: '@oneup_flysystem.filesystems.default_filesystem'

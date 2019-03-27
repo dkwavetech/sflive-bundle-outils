@@ -13,9 +13,6 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *        "delete"={"method"="DELETE"},
  *        "get_infos"={
  *            "route_name"="app_speaker_wiki"
- *         },
- *        "get_secured"={
- *            "route_name"="app_speaker_secured"
  *         }
  *    }
  * )
