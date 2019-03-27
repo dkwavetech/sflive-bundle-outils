@@ -21,7 +21,7 @@ class SpeakerController
     public function __construct(
         Client $client,
         Filesystem $filesystem,
-        LoggerInterface $logger= null
+        LoggerInterface $logger = null
     ) {
         $this->client = $client;
         $this->filesystem = $filesystem;
