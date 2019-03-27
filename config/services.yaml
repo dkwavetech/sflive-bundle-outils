@@ -44,5 +44,6 @@ services:
         alias: algolia.client
 
     App\Controller\SpeakerController:
+        public: true
         arguments:
-            $filesystem: '@oneup_flysystem.filesystems.default_filesystem'
+            $filesystem: '@oneup_flysystem.default_filesystem_filesystem'
