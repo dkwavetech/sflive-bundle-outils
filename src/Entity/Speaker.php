@@ -36,6 +36,13 @@ class Speaker
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    private $language;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -49,6 +56,18 @@ class Speaker
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(string $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }
