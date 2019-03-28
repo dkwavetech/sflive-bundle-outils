@@ -42,7 +42,7 @@ class Speaker
      * @ORM\Column(type="string")
      */
     private $language;
-
+    
     public function getId(): ?int
     {
         return $this->id;
