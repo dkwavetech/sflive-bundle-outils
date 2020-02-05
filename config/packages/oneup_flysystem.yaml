@@ -7,10 +7,16 @@ oneup_flysystem:
 
         speaker_ftp:
             ftp:
-              host: '%env(FTP_HOST)%'
-              port: '%env(FTP_PORT)%'
-              username: '%env(FTP_USERNAME)%'
-              password: '%env(FTP_PASSWORD)%'
+                host: ~
+                port: 21
+                username: ~
+                password: ~
+                root: ~
+                ssl: ~
+                timeout: ~
+                permPrivate: ~
+                permPublic: ~
+                passive: ~
     filesystems:
         default_filesystem:
             adapter: speaker_ftp
