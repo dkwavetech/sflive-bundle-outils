@@ -13,9 +13,6 @@ use ApiPlatform\Core\Annotation\ApiResource;
  *        "delete"={"method"="DELETE"},
  *        "get_infos"={
  *            "route_name"="app_speaker_wiki"
- *         },
- *        "get_secured"={
- *            "route_name"="app_speaker_secured"
  *         }
  *    }
  * )
@@ -39,6 +36,13 @@ class Speaker
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    private $language;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +56,18 @@ class Speaker
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(string $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }

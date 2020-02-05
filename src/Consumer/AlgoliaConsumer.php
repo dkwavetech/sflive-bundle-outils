@@ -15,9 +15,16 @@ use Psr\Log\NullLogger;
 
 class AlgoliaConsumer implements ConsumerInterface
 {
+    /** @var IndexManagerInterface  */
     private $indexManager;
+
+    /** @var EntityManagerInterface  */
     private $entityManager;
+
+    /** @var Client  */
     private $algoliaClient;
+
+    /** @var LoggerInterface  */
     private $logger;
 
     public function __construct(
@@ -32,7 +39,7 @@ class AlgoliaConsumer implements ConsumerInterface
         $this->logger = $logger ?: new NullLogger();
     }
 
-    public function execute(AMQPMessage $msg)
+    public function execute(AMQPMessage $msg): int
     {
         $message = \json_decode($msg->getBody(), true);
 
@@ -46,6 +53,8 @@ class AlgoliaConsumer implements ConsumerInterface
 
             $this->indexManager->index($entity, $this->entityManager);
         } catch (\Exception $e) {
+            $this->logger->warning($e->getMessage());
+
             return ConsumerInterface::MSG_REJECT;
         }
 

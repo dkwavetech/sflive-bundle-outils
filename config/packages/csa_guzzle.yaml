@@ -5,6 +5,3 @@ csa_guzzle:
     profiler: '%kernel.debug%'
     clients:
         default: ~
-#        my_client:
-#            config:
-#                base_uri: 'http://example.com'

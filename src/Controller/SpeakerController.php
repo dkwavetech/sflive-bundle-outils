@@ -5,18 +5,32 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use GuzzleHttp\Client;
-use Symfony\Component\HttpFoundation\Request;
+use League\Flysystem\FileExistsException;
+use League\Flysystem\Filesystem;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SpeakerController
 {
-
+    /** @var Client */
     private $client;
 
-    public function __construct(Client $client)
-    {
+    /** @var Filesystem  */
+    private $filesystem;
+
+    /** @var LoggerInterface  */
+    private $logger;
+
+    public function __construct(
+        Client $client,
+        Filesystem $filesystem,
+        LoggerInterface $logger = null
+    ) {
         $this->client = $client;
+        $this->filesystem = $filesystem;
+        $this->logger = $logger ?: new NullLogger();
     }
 
     /**
@@ -33,30 +47,27 @@ class SpeakerController
         return new Response($response->getBody()->getContents(), $response->getStatusCode());
     }
 
-    /**
-     * @Route(
-     *     name="app_speaker_secured",
-     *     path="/api/secured",
-     *     methods={"GET"}
-     * )
-     */
-    public function getSecured(): Response
+    public function exportFile($filename)
     {
-        return new Response();
+        try {
+            $this->filesystem->write('/', file_get_contents($filename));
+        } catch (FileExistsException $e) {
+            $this->logger->alert($e->getMessage());
+        }
     }
 
     public function excessiveMethodLength():string
     {
         $test1 = 1;
-        $test2 = 2;
+        //$test2 = 2;
         //d
         if ($test1 === '2') {
             return 'ok';
         }
     }
 
-    private function unused()
+    /*private function unused()
     {
         return true;
-    }
+    }*/
 }

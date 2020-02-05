@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace App\EventSubscriber;
 
 use ApiPlatform\Core\EventListener\EventPriorities;
-use App\Amqp\Message\AlgoliaMessage;
-use App\Amqp\Publisher\AlgoliaMessagePublisher;
 use App\Entity\Speaker;
-use App\Entity\Firm;
 use OldSound\RabbitMqBundle\RabbitMq\ProducerInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -18,7 +15,10 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class UpdateAlgoliaSubscriber implements EventSubscriberInterface
 {
+    /** @var ProducerInterface  */
     private $algoliaPublisher;
+
+    /** @var NullLogger */
     private $logger;
 
     public function __construct(
@@ -29,6 +29,9 @@ class UpdateAlgoliaSubscriber implements EventSubscriberInterface
         $this->logger = $logger ?: new NullLogger();
     }
 
+    /**
+     * @inheritdoc
+     */
     public static function getSubscribedEvents()
     {
         return [
@@ -36,7 +39,7 @@ class UpdateAlgoliaSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function updateAlgolia(GetResponseForControllerResultEvent $event)
+    public function updateAlgolia(GetResponseForControllerResultEvent $event): void
     {
         $speaker = $event->getControllerResult();
 
